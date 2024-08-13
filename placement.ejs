@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement</title>
+   <style>
+      body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg,rgb(189, 163, 189), white);
+        }
+        #ahh {
+            background-color: rgb(40, 2, 40);
+            color: white;
+            padding: 8px;
+            font-weight: bolder;
+            text-align: center;
+            margin-top: -7px;
+        }
+        
+   </style> <!-- Ensure path is correct -->
+</head>
+<body>
+    <h1 id="ahh">PLACEMENTS</h1>
+    <ul id="boxx">
+        <% buttons.forEach((button,index) => { %>
+            <li>
+                <h2></h2>
+                <p>Number of students:<%= button.no_of_students %> </p>
+                <p>Company name:<%=button.company_name %></p>
+                <p>Year:<%=button.year %></p>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="http://127.0.0.1:5501/club.html">Back to Club Page</a>
+</body>
+</html>

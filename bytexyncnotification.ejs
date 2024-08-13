@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteXync Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg,rgb(189, 163, 189), white);
+        }
+        .container {
+            display: flex;
+            margin-bottom: 1px;
+            height:100vh;
+        }
+        .notifications {
+            flex: 1;
+            padding: 20px;
+            border-right: 2px solid black;
+        }
+        .description {
+            flex: 1;
+            padding: 20px;
+        }
+        .notification-item {
+            margin-bottom: 17px;
+            display: flex;
+            align-items: center;
+        }
+        .notification-item h3 {
+            margin: 0 0 10px 0;
+        }
+        .notification-item p {
+            margin: 0;
+        }
+        .icon {
+            margin-left: 10px;
+            font-size: 24px; /* Adjust size as needed */
+            color: yellow; /* Adjust color as needed */
+        }
+        h1 {
+            background-color: rgb(40, 2, 40);
+            color: white;
+            padding: 8px;
+            font-weight: bolder;
+            text-align: center;
+            margin-top: -7px;
+        }
+        .back {
+            background-color:rgb(40, 2, 40);
+            text-decoration: none;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            margin-top: 10px;
+            margin-left: 525px;
+        }
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color:white;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="/club.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>ByteXync Notifications</h1>
+    <div class="container">
+        <div class="notifications">
+            <ol>
+                <% notifications.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach((notification, index) => { %>
+                    <li class="notification-item">
+                        <div>
+                            <h3><%= notification.message %></h3>
+                            <p>Date: <%= new Date(notification.date).toLocaleDateString() %></p>
+                        </div>
+                        <% if (index === 0) { %> 
+                            <i class="fas fa-star icon"></i> 
+                        <% } %>
+                    </li>
+                <% }); %>
+            </ol>
+        </div>
+        <div class="description">
+            <h2>About ByteXync Club</h2>
+            <h4>Byte Xync is a vibrant tech club at our college, dedicated to empowering students with the latest skills in technology and innovation. The club serves as a hub for tech enthusiasts, offering a variety of workshops and hackathons that provide hands-on experience and opportunities to develop cutting-edge projects.</h4>
+            <h4>The mission of Byte Xync is to foster a community of tech-savvy students who are passionate about coding, development, and innovation. The club aims to provide resources and a collaborative environment where students can learn, create, and showcase their technological prowess</h4>
+        </div>
+    </div>
+    <button class="back"> <a href="http://127.0.0.1:5501/club.html">Back to Club Page</a> </button>  
+</body>
+</html>

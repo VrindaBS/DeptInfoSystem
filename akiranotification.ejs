@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akira Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg,rgb(189, 163, 189), white);
+        }
+        .container {
+            display: flex;
+            margin-bottom: 1px;
+            height:100vh;
+        }
+        .notifications {
+            flex: 1;
+            padding: 20px;
+            border-right: 2px solid black;
+        }
+        .description {
+            flex: 1;
+            padding: 20px;
+        }
+        .notification-item {
+            margin-bottom: 17px;
+            display: flex;
+            align-items: center;
+        }
+        .notification-item h3 {
+            margin: 0 0 10px 0;
+        }
+        .notification-item p {
+            margin: 0;
+        }
+        .icon {
+            margin-left: 10px;
+            font-size: 24px; 
+            color: yellow;
+        }
+        h1 {
+            background-color: rgb(40, 2, 40);
+            color: white;
+            padding: 8px;
+            font-weight: bolder;
+            text-align: center;
+            margin-top: -7px;
+        }
+        .back {
+            background-color:rgb(40, 2, 40);
+            text-decoration: none;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            margin-top: 10px;
+            margin-left: 525px;
+        }
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color:white;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="/club.css">  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Akira Notifications</h1>
+    <div class="container">
+        <div class="notifications">
+            <ol>
+                <% notifications.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach((notification, index) => { %>
+                    <li class="notification-item">
+                        <div>
+                            <h3><%= notification.message %></h3>
+                            <p>Date: <%= new Date(notification.date).toLocaleDateString() %></p>
+                        </div>
+                        <% if (index === 0) { %> 
+                            <i class="fas fa-star icon"></i> 
+                        <% } %>
+                    </li>
+                <% }); %>
+            </ol>
+        </div>
+        <div class="description">
+            <h2>About Akira Club</h2>
+            <h4>Akira, the dynamic cultural and sports club of our college, offers a vibrant mix of activities to foster talent and community spirit. Celebrating the arts, Akira organizes dance competitions, music concerts, theater productions, and art exhibitions, providing students a platform to showcase their creativity.
+
+                On the sports side, Akira promotes physical fitness and teamwork through various tournaments and competitions in football, basketball, athletics, and indoor games. These events encourage healthy competition and camaraderie among students.
+                
+                Akira also hosts workshops and seminars with professionals from the cultural and sports fields, offering valuable learning opportunities. These sessions aim to enhance skills and inspire students to excel in their chosen areas.
+                
+                With a packed calendar of events throughout the year, Akira ensures there's always something exciting happening on campus. The club's inclusive environment welcomes all students, encouraging them to explore their passions, develop skills, and build lasting friendships.
+                
+                Joining Akira means becoming part of a vibrant community where you can challenge yourself, discover new interests, and make unforgettable memories</h4>
+        
+        </div>
+    </div>
+    <button class="back"> <a href="http://127.0.0.1:5501/club.html">Back to Club Page</a> </button>  
+</body>
+</html>

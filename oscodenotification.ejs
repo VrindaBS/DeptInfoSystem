@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OsCode Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg,rgb(189, 163, 189), white)
+        }
+        .container {
+            display: flex;
+            margin-bottom: 1px;
+            height:100vh;
+        }
+        .notifications {
+            flex: 1;
+            padding: 20px;
+            border-right: 2px solid black;
+        }
+        .description {
+            flex: 1;
+            padding: 20px;
+        }
+        .notification-item {
+            margin-bottom: 17px;
+            display: flex;
+            align-items: center;
+        }
+        .notification-item h3 {
+            margin: 0 0 10px 0;
+        }
+        .notification-item p {
+            margin: 0;
+        }
+        .icon {
+            margin-left: 10px;
+            font-size: 24px; 
+            color:yellow; 
+        }
+        h1 {
+            background-color: rgb(40, 2, 40);
+            color: white;
+            padding: 8px;
+            font-weight: bolder;
+            text-align: center;
+            margin-top: -7px;
+        }
+        .back {
+            background-color: rgb(40, 2, 40);
+            text-decoration: none;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            margin-top: 10px;
+            margin-left: 525px;
+        }
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color:white
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="/club.css">  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>OsCode Notifications</h1>
+    <div class="container">
+        <div class="notifications">
+            <ol>
+                <% notifications.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach((notification, index) => { %>
+                    <li class="notification-item">
+                        <div>
+                            <h3><%= notification.message %></h3>
+                            <p>Date: <%= new Date(notification.date).toLocaleDateString() %></p>
+                        </div>
+                        <% if (index === 0) { %> 
+                            <i class="fas fa-star icon"></i> 
+                        <% } %>
+                    </li>
+                <% }); %>
+            </ol>
+        </div>
+        <div class="description">
+            <h2>About OsCode Club</h2>
+            <h4>
+                Join our vibrant community of college students and industry professionals driven by a passion for technology and innovation. Discover endless opportunities to unleash your potential through coding, collaboration, and creativity. Whether you're a seasoned coder or just starting out, our community welcomes all levels of expertise. Engage in dynamic workshops, hackathons, and networking events designed to foster growth and learning. Gain valuable insights and mentorship from industry leaders and experienced professionals. Expand your skills in cutting-edge technologies and stay ahead in today's competitive landscape. Join us in shaping the future through innovation and hands-on experience. Connect with like-minded peers who share your enthusiasm for pushing boundaries and creating impactful solutions. Embrace a supportive environment that encourages experimentation and bold ideas. Elevate your learning journey with access to resources, tools, and real-world projects. Join a community dedicated to exploring the latest trends and advancements in tech. Collaborate on exciting projects that challenge and inspire. Build lifelong connections and friendships with passionate individuals from diverse backgrounds. Experience firsthand the thrill of turning ideas into reality in a collaborative setting. Transform your passion for technology into tangible skills and achievements.</h4>
+        </div>
+    </div>
+    <button class="back"> <a href="http://127.0.0.1:5501/club.html">Back to Club Page</a> </button>  
+</body>
+</html>
